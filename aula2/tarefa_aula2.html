@@ -1,0 +1,37 @@
+<!-- Tarefa: Realizar um formulário com Nome, Senha, Confirmar Senha e Salvar informações -->
+<html>
+    <head>
+        <title>Tarefa Aula 2</title>
+        <script type="text/javascript">
+            function comparar_senha (){
+                var senha1 = document.getElementById('senha');
+                var senha2 = document.getElementById('confirmar_senha');
+                if (senha1 != senha2){
+                    alert('conflito de senhas')
+                }
+            }
+            
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Cadastro de Formulário:</h1>
+        <br><br/>
+
+            <form>
+    
+                <label>Nome:<input type="text" name="nome" /></label>
+                <br><br/>
+                <label>Senha:<input id="senha" type="password" name="senha" /></label>
+                <br><br/>
+                <label>Confirmar Senha:<input id="confirmar_senha" type="password" name="confirmar_senha" /></label>
+                <br><br/>
+                <br><br/>
+                <button onclick="comparar_senha()">Salvar</button>
+    
+            </form>
+
+    </body>
+
+</html>
