@@ -1,17 +1,12 @@
 function iniciar(){
-    var orc = document.getElementById('orc')
-    orc.addEventListener('click', selecionarItem)
-    var soco = document.getElementById('soco')
-    soco.addEventListener('click', selecionarItem)
+    var itens = document.getElementsByClassName('itens');
+    for (let i = 0; i < itens.length; i++) {
+        itens[i].addEventListener('click', selecionarItem)
+
+    }
 }
 
 function selecionarItem(evento){
-    evento.target.style = "border: 3px solid blue"
+    var alvo = evento.target
+    alvo.parentElement //falta colocar borda e corrigir o erro de múltiplas escolhas.
 }
-
-// function iniciar(){
-//     var elementos = document.getElementsByClassName('elemento');
-//     for (let i = 0; i < elementos.length; i++) {
-//         elementos[i].addEventListener('click', marcarElementoSelecionado)
-//     }
-// }
