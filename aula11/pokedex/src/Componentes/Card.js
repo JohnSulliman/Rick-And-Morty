@@ -35,7 +35,7 @@ class Card extends React.Component {
                         <p className='card-id'>Nº {pokemon.id}</p>
                     </div>
                     <h5>{pokemon.name}</h5>
-                    <div className='card-categories'>
+                    <div className='card-type'>
                         {this.criarListaTipos()}
                     </div>
                 </div>

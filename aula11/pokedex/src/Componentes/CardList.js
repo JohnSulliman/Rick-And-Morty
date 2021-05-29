@@ -52,6 +52,27 @@ class CardList extends React.Component {
                 'image': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png',
                 'types': ['Fire', 'Flying']
             },
+            
+            {
+                'id': '00' + 7,
+                'name': 'Squirtle',
+                'image': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
+                'types': ['Water']
+            },
+            
+            {
+                'id': '00' + 8,
+                'name': 'Wartortle',
+                'image': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png',
+                'types': ['Water']
+            },
+            
+            {
+                'id': '00' + 9,
+                'name': 'Blastoise',
+                'image': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png',
+                'types': ['Water']
+            },
         ];
         
         this.setState({

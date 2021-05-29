@@ -54,7 +54,7 @@ a {
   margin: 0;
 }
 
-.card-categories {
+.card-type {
   display: flex;
   justify-content: center;
 }
@@ -91,7 +91,11 @@ a {
   display: block;
 }
 
-.info .info-block .info-category {
+.info .info-block .info-type {
+  margin: 10px 0;
+}
+
+.info .info-block .info-weak {
   margin: 10px 0;
 }
 
