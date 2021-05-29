@@ -1,0 +1,85 @@
+/*Tipo Pokemon de Card */
+.card-categories .Grass {
+    background-color: MediumSeaGreen;
+    color: Black;
+    border-radius: 3px;
+    margin: 0 3% 0 0;
+    line-height: 1.5em;
+    width: 30%;
+    font-size: 0.7em;
+    text-align: center;
+  }
+  
+  .card-categories .Poison {
+    background-color: DarkOrchid;
+    color: White;
+    border-radius: 3px;
+    margin: 0 3% 0 0;
+    line-height: 1.5em;
+    width: 30%;
+    font-size: 0.7em;
+    text-align: center;
+  }
+  
+  .card-categories .Fire {
+    background-color: DarkOrange;
+    color: White;
+    border-radius: 3px;
+    margin: 0 3% 0 0;
+    line-height: 1.5em;
+    width: 30%;
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  .card-categories .Flying {
+    background-color: LightSkyBlue;
+    color: Black;
+    border-radius: 3px;
+    margin: 0 3% 0 0;
+    line-height: 1.5em;
+    width: 30%;
+    font-size: 0.7em;
+    text-align: center;
+  }
+  
+  /*Tipo Pokemon de Info*/
+  .info .info-block .info-category .Grass {
+    background-color: MediumSeaGreen;
+    color: Black;
+    border-radius: 3px;
+    padding: 10px 30px;
+    margin: 0 3% 0 0;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .info .info-block .info-category .Poison {
+    background-color: DarkOrchid;
+    color: White;
+    border-radius: 3px;
+    padding: 10px 30px;
+    margin: 0 3% 0 0;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .info .info-block .info-category .Fire {
+    background-color: DarkOrange;
+    color: White;
+    border-radius: 3px;
+    padding: 10px 30px;
+    margin: 0 3% 0 0;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .info .info-block .info-category .Flying {
+    background-color: LightSkyBlue;
+    color: Black;
+    border-radius: 3px;
+    padding: 10px 30px;
+    margin: 0 3% 0 0;
+    text-align: center;
+    display: inline-block;
+  }

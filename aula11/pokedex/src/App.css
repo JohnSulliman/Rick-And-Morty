@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 
-/*Componente Card & CardList */
+/*Componente Card & CardList*/
 .card-list {
   display: flex;
   flex-direction: row;
@@ -16,6 +16,7 @@ a {
 }
 
 .card {
+  width: calc(100vh / 4);
   background-color: #ffffff;
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -53,23 +54,12 @@ a {
   margin: 0;
 }
 
-.card-cartegories {
+.card-categories {
   display: flex;
   justify-content: center;
 }
 
-.card-cartegory {
-  background-color: teal;
-  color: #ffffff;
-  border-radius: 3px;
-  margin: 0 3% 0 0;
-  line-height: 1.5em;
-  width: 30%;
-  font-size: 0.7em;
-  text-align: center;
-}
-
-/*Componente Info */
+/*Componente Info*/
 .info {
   background-color: #ffffff;
   padding: 0 10px;
@@ -101,18 +91,8 @@ a {
   display: block;
 }
 
-.info .info-block .info-catergory {
+.info .info-block .info-category {
   margin: 10px 0;
-}
-
-.info .info-block .info-catergory .type {
-  background-color: teal;
-  color: white;
-  border-radius: 3px;
-  padding: 10px 30px;
-  margin: 0 3% 0 0;
-  text-align: center;
-  display: inline-block;
 }
 
 .info .info-footer {
@@ -125,9 +105,13 @@ a {
 
 .info .info-footer a {
   text-decoration: none;
-  background-color: lightblue;
+  background-color: #1E90FF;
   padding: 10px 30px;
   border-radius: 10px;
-  color: white;
+  color: White;
   font-size: 1em;
+}
+
+.info .info-footer a:hover {
+  background-color: lightblue;
 }

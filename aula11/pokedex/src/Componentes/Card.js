@@ -1,25 +1,53 @@
+import React from 'react';
 import {Link} from 'react-router-dom'
 
-function Card() {
-    return(
-        <Link to='/info/001'>
-            <div className='card'>
-                <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png' alt='Bulbasaur' />
-                <div className='card-info'>
-                    <p className='card-id'>Nº 001</p>
-                </div>
-                <h5>Bulbasaur</h5>
-                <div className='card-categories'>
-                    <div className='card-category'>
-                        <span>Grass</span>
+class Card extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pokemon: {}
+        }
+
+        this.state = {
+            pokemon: {
+                'id': -1,
+                'name': '',
+                'image': '',
+                'types': []
+            }
+        }
+    }
+
+    criarListaTipos() {
+        return this.state.pokemon.types.map((type) => {
+            return <span className={type} key={type}>{type}</span>
+        })
+    }
+
+    render(){
+        const pokemon = this.state.pokemon
+
+        return(
+            <Link to={`/pokemon/${pokemon.id}`}>
+                <div className='card'>
+                    <img src={pokemon.image} alt={pokemon.name} />
+                    <div className='card-info'>
+                        <p className='card-id'>Nº {pokemon.id}</p>
                     </div>
-                    <div className='card-category'>
-                        <span>Poison</span>
+                    <h5>{pokemon.name}</h5>
+                    <div className='card-categories'>
+                        {this.criarListaTipos()}
                     </div>
                 </div>
-            </div>
-        </Link>
-    );
+            </Link>
+        );
+    }
+
+    componentDidMount() {
+        this.setState({
+            pokemon: this.props.pokemon
+        })
+    }
     
 }
 
