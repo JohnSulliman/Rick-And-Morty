@@ -15,7 +15,7 @@ class Info extends React.Component {
                 'weight': '',
                 'category': '',
                 'abilities': '',
-                'evolutions': '',
+                'evolutions': [],
                 'types': [],
                 'weaknesses': []
             }
@@ -32,7 +32,7 @@ class Info extends React.Component {
                 'abilities': 'Overgrow',
                 'evolutions': 'Bulbasaur - Ivysaur - Venusaur',
                 'types': ['Grass', 'Poison'],
-                'weaknesses': ['Fire', 'Psychic', 'Flying', 'Ice']
+                'weaknesses': ['Fire', 'Psychic', 'Flying', 'Ice'],
             },
 
             2:{
@@ -169,8 +169,8 @@ class Info extends React.Component {
                         <p><strong>Height:</strong> {`${pokemon.height}m`}</p>
                         <p><strong>Weight:</strong> {`${pokemon.weight}kg`}</p>
                         <p><strong>Category:</strong> {pokemon.category}</p>
+                        <p><strong>evolutions:</strong> {pokemon.evolutions}</p>
                         <p><strong>Abilities:</strong> {pokemon.abilities}</p>
-                        <p><strong>Evolutions:</strong> {pokemon.evolutions} </p>
                         <strong>Type:</strong>
                         <div className='info-type'>
                             {this.criarListaTipos()}

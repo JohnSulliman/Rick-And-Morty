@@ -1,5 +1,7 @@
 html {
   background-color: #282c34;
+  background-image:url("https://i.imgur.com/6R0Q1DU.jpg")
+  
 }
 
 a {
@@ -7,18 +9,55 @@ a {
 }
 
 /*Componente Card & CardList*/
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body .image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: White;
+}
+
+.body .pokebola {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 5px solid #EE0000;
+  transition: 0.5s;
+  ;
+}
+
+#pokedex {
+  margin-top: 10px;
+}
+
+.pokebola:hover, .pokebola:focus {
+  color: white;
+  cursor: pointer;
+  background-color: #EE0000;
+}
+
 .card-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
+  margin-inline: 250px;
+  background-color: White;
 }
 
 .card {
   width: calc(100vh / 4);
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
+  background-color: WhiteSmoke;
+  border: 1px solid Gainsboro;
   border-radius: 5px;
   color: #282c34;
   font-size: 16px;
@@ -27,10 +66,10 @@ a {
   transition: 0.5s;
 }
 
-.card:hover {
+.card:hover, .card:focus {
   opacity: 0.9;
   cursor: pointer;
-  margin-top: -2px;
+  transform:scale(1.1)
 }
 
 .card img {
@@ -76,7 +115,7 @@ a {
 .info .info-body {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .info .info-block {
@@ -118,4 +157,23 @@ a {
 
 .info .info-footer a:hover {
   background-color: lightblue;
+}
+
+.info-evolution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-evo-image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.info-evo-name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 30px;
 }

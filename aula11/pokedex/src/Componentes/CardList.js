@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import pokebola from '../img/pokebola.png'
 
 class CardList extends React.Component {
     constructor(props) {
@@ -88,14 +89,21 @@ class CardList extends React.Component {
 
     render() {
         return(
-            <div>
-                <div className='card-list'>
-                    {this.criarCardsPokemon()}
+                <div className='body'>
+                    <header className='image'>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png' width='800' alt='pokemon'/>
+                        <div className='pokebola' onClick={() => this.listarPokemons()}>
+                            <img src={pokebola} width='30' alt='pokebola'/>
+                            <span id='pokedex'>Pokedex</span>
+                        </div>
+                    </header>
+                    <div className='card-list'>
+                        {this.criarCardsPokemon()}
+                    </div>
+                    {/* <button onClick={() => this.listarPokemons()}>
+                        Listar Pokemons
+                    </button> */}
                 </div>
-                <button onClick={() => this.listarPokemons()}>
-                    Listar Pokemons
-                </button>
-            </div>
 
         );
     }
