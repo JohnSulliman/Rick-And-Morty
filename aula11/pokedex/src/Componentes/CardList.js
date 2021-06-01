@@ -100,9 +100,6 @@ class CardList extends React.Component {
                     <div className='card-list'>
                         {this.criarCardsPokemon()}
                     </div>
-                    {/* <button onClick={() => this.listarPokemons()}>
-                        Listar Pokemons
-                    </button> */}
                 </div>
 
         );

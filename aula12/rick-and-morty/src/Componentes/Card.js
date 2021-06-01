@@ -1,22 +1,49 @@
+import React from 'react';
 import {Link} from 'react-router-dom'
 
-function Card() {
-    return(
-            <div className='card'>
-                <img src='https://rickandmortyapi.com/api/character/avatar/1.jpeg' alt='Rick Sanchez' className='imagem' />
-                <div className='info'>
-                    <Link to='/char/rick-sanchez' className='nome'>
-                            <h1>Rick Sanchez</h1>
-                    </Link>
-                    <div className='status'>
-                        <p><strong>Status:</strong> Vivo</p>
+class Card extends React.Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            char: {}
+        }
+
+        this.state = {
+            char: {
+                'id': -1,
+                'name': '',
+                'image': '',
+                'status': '',
+                'species':'',
+            }
+        }
+    }
+
+
+    render(){
+        const char = this.state.char
+
+        return(
+                <Link to={`/char/${char.id}`}>
+                    <div className='card'>
+                        <img src={char.image} alt={char.name} className='card-image'/>
+                        <div className='card-status'>
+                            <h1>{char.name}</h1>
+                            <span><strong>Status:</strong> {char.status}</span>
+                            <span><strong>Species:</strong> {char.species}</span>
+                        </div>
                     </div>
-                    <div className='especie'>
-                        <p><strong>Espécie:</strong> Humano</p>
-                    </div>
-                </div>
-            </div>
-    )
+                </Link>
+        );
+    }
+
+    componentDidMount() {
+        this.setState({
+            char: this.props.char
+        })
+    }
+    
 }
 
 export default Card;

@@ -1,27 +1,104 @@
+import React from 'react';
 import {Link} from 'react-router-dom'
 
-function Info() {
-    return(
-        <section className='char'>
-            <div className='char-imagem'>
-                <img src='https://rickandmortyapi.com/api/character/avatar/1.jpeg' alt='Rick Sanchez' className='imagem' />
-                <div className='char-info'>
-                    <div className='char-nome'>
-                        <h1>Rick Sanchez</h1>
+class Info extends React.Component {
+    constructor(props) {
+        super(props);
+        this.id = parseInt(props.match.params.id);
+
+        this.state = {
+            char: {
+                'id': -1,
+                'name': '',
+                'image': '',
+                'status': '',
+                'species':'',
+            }
+        }
+
+        this.char = {
+            1: {
+                'id': 1,
+                'name': 'Rick Sanchez',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+                'status': 'Alive',
+                'species':'Human',
+            },
+
+            2:{
+                'id': 2,
+                'name': 'Flower Morty',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/476.jpeg',
+                'status': 'Alive',
+                'species':'Human',
+            },
+
+            3:{
+                'id': 3,
+                'name': 'Cynthia',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/87.jpeg',
+                'status': 'Dead',
+                'species': 'Alien',
+            },
+
+            4:{
+                'id': 4,
+                'name': 'Donna Gueterman',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/102.jpeg',
+                'status': 'Dead',
+                'species': 'Robot',
+            },
+
+            5:{
+                'id': 5,
+                'name': 'Mechanical Summer',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/219.jpeg',
+                'status': 'Unknown',
+                'species': 'Robot',
+            },
+
+            6:{
+                'id': 6,
+                'name': 'Journalist Rick',
+                'image': 'https://rickandmortyapi.com/api/character/avatar/478.jpeg',
+                'status': 'Alive',
+                'species': 'Human',
+            },
+
+        }
+    }
+
+    render() {
+        const char = this.state.char;
+        return(
+            <section className='info'>
+                <div className='info-header'>
+                    <h1>{char.name}</h1>    
+                </div>
+                <div className='info-body'>
+                    <div className='info-block'>
+                        <img src={char.image} alt={char.name} id='image' />
                     </div>
-                    <div className='char-status'>
-                        <p><strong>Status:</strong> Vivo</p>
-                    </div>
-                    <div className='char-especie'>
-                        <p><strong>Espécie:</strong> Humano</p>
+                    <div className='info-block'>
+                        <p><strong>Status:</strong> {`${char.status}`}</p>
+                        <p><strong>Species:</strong> {`${char.species}`}</p>
                     </div>
                 </div>
-            </div>
-            <Link to='/' className='char-botao'>
-                    <span>Voltar</span>
-            </Link>
-        </section>
-    );
+                <footer className='info-footer'>
+                    <Link to='/'>Voltar</Link>
+                </footer>
+            </section>
+        );
+    }
+
+    componentDidMount() {
+        let char = this.char[this.id];
+        if (char) {
+            this.setState({
+                char: char
+            })
+        }
+    }
 }
 
 
