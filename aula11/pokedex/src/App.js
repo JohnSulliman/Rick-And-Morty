@@ -1,5 +1,4 @@
-import './App.css';
-import './Tipos.css';
+import './App.scss';
 import CardList from './Componentes/CardList'
 import Info from './Componentes/Info'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -11,7 +10,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path='/' exact={true} component={CardList} />
+            <Route path='/:page?' exact={true} component={CardList} />
             <Route path='/pokemon/:id' component={Info} />
           </Switch>
         </BrowserRouter>
