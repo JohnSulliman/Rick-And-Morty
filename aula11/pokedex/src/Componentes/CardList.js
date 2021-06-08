@@ -7,7 +7,6 @@ class CardList extends React.Component {
         super(props);
         this.state = {
             isLoaded: false,
-            nextPage: false,
             pokemons: []
         };
     }
@@ -16,12 +15,6 @@ class CardList extends React.Component {
         return this.state.pokemons.map((pokemon) => {
             return <Card pokemon = {pokemon} key = {pokemon.name} />
         });
-    }
-
-    avancarPagina() {
-        this.setState({
-            nextPage:true
-        })
     }
 
     render() {

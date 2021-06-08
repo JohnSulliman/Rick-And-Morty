@@ -1,0 +1,92 @@
+/*Corpo HTML*/
+html {
+    background-image: url('https://external-preview.redd.it/e_W5f9IwQFdWYwnyboZRwTmuTeWzG0nBERD7NjXbgrg.jpg?auto=webp&s=fb6ad8106c0f8537f3d8943ae36bf5cb93760a57');
+    background-size: 100%; 
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Página Inicial e Componente Card-List*/
+.body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    &__image{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+    }
+
+    &__personagem{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+    }
+
+    &__card-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-inline: 250px;
+    }
+}
+
+/*Componentes Card*/
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: DimGrey;
+    border: 1px solid Black;
+    border-radius: 15px;
+    margin-top: 10px;
+
+    &__image{
+        border: 1px solid Black;
+        border-radius: 100%;
+        margin: 10px;
+        height: 200px;
+    }
+
+    &__status{
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        width: 150px;
+        padding: 0 10px;
+        color: White;
+
+        &__name{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+
+        &__info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+    }
+}
+
+/*Componente Info*/
+
