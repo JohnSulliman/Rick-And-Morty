@@ -1,5 +1,4 @@
 /*Estrutura html*/
-
 html {
     background-image:url("https://i.imgur.com/6R0Q1DU.jpg")
     
@@ -115,6 +114,11 @@ a {
         }
     }
 
+    &__img__pokemon{
+        width:800px; 
+        margin-top: 10px;
+    }
+
     &__card {
         width: calc(100vh / 4);
         background-color: WhiteSmoke;
@@ -174,8 +178,24 @@ a {
 
 }
 
-/*Bloco Info*/
+/*Bloco SearchBox*/
+.search-box {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px auto 0 auto;
 
+    &__input {
+        margin: 0 auto;
+        padding: 0.5em;
+        font-size: 1.2em;
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+/*Bloco Info*/
 .info {
     background-color: rgba(255, 255, 255, 0.7);;
     padding: 0 10px;
