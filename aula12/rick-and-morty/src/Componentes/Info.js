@@ -25,20 +25,20 @@ class Info extends React.Component {
         else {
             return(
                 <section className='info'>
-                    <div className='info-header'>
+                    <div className='info__header'>
                         <h1>{char.name}</h1>    
                     </div>
-                    <div className='info-body'>
-                        <div className='info-block'>
-                            <img src={char.image} alt={char.name} id='image' />
+                    <div className='info__body'>
+                        <div className='info__block__img'>
+                            <img src={char.image} alt={char.name} className='info__body__img' />
                         </div>
-                        <div className='info-block'>
+                        <div className='info__block__status'>
                             <p><strong>Status:</strong> {`${char.status}`}</p>
                             <p><strong>Species:</strong> {`${char.species}`}</p>
                         </div>
                     </div>
-                    <footer className='info-footer'>
-                        <Link to='/'>Voltar</Link>
+                    <footer className='info__footer'>
+                        <Link to='/' className='info__footer__link'>Voltar</Link>
                     </footer>
                 </section>
             );
