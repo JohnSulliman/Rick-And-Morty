@@ -35,6 +35,9 @@ class Info extends React.Component {
                         <div className='info__block__status'>
                             <p><strong>Status:</strong> {`${char.status}`}</p>
                             <p><strong>Species:</strong> {`${char.species}`}</p>
+                            <p><strong>Gender:</strong> {`${char.gender}`}</p>
+                            <p><strong>Origin:</strong> {`${char.origin.name}`}</p>
+                            <p><strong>Location:</strong> {`${char.location.name}`}</p>
                         </div>
                     </div>
                     <footer className='info__footer'>

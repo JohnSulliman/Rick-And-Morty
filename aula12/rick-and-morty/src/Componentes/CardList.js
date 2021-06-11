@@ -2,6 +2,8 @@ import React from 'react';
 import Card from './Card';
 import SearchBox from './SearchBox';
 import Footer from './Footer'
+import Logo from '../img/Logo.png'
+import Rick_and_Morty from '../img/Rick_and_Morty.png'
 
 class CardList extends React.Component {
     constructor(props) {
@@ -78,14 +80,22 @@ class CardList extends React.Component {
         else {
             return(
                     <div className='body'>
+                        <header className='body__header'>
+                            <a href='https://rickandmortyapi.com/' target='_blanck'>
+                                <img src={Logo}
+                                className='body__header__logo'
+                                width='45px' 
+                                alt='rick-and-morty' />
+                            </a>
+                        </header>
                         <div className='body__background'>
-                            <img src='https://imagensemoldes.com.br/wp-content/uploads/2021/04/Rick-and-Morty-PNG-1024x435.png' 
+                            <img src={Rick_and_Morty} 
                             className='body__image'
                             width='800' 
                             alt='Rick-And-Morty'/>
                         </div>
                         <menu className='body__personagem'>
-                            <span id='char'>Personagens</span>
+                            <span><strong>Personagens</strong></span>
                         </menu>
                         <SearchBox placeholder='Buscar Personagens...' Buscar={(evento) => this.BuscarNome(evento)}/>
                         <div className='body__card-list'>

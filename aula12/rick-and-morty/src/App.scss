@@ -11,7 +11,7 @@ a {
 
 /*Bloco SearchBox*/
 .search-box {
-    width: 100%;
+    width: 89%;
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -32,13 +32,22 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
 
+    &__header{
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        color: black;
+
+        &__logo:hover{
+            cursor: pointer;
+        }
+    }
+
     &__background{
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         background-color: rgba(255, 255, 255, 0.8);
-        margin-top: -80px;
         width: 100%;
     }
 
@@ -219,12 +228,16 @@ a {
 @media only screen and (max-width: 700px) {
     .body {
 
-        &__background{
-            margin-top: -40px;
+        &__header{
+
+            &__logo{
+                width: 25px;
+            }
         }
 
         &__image{
             width: 100%;
+            background-repeat: no-repeat;
         }
 
         &__card-list{
