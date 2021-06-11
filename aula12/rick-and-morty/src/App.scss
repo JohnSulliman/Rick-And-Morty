@@ -1,7 +1,8 @@
 /*Corpo HTML*/
 html {
-    background-image: url('https://external-preview.redd.it/e_W5f9IwQFdWYwnyboZRwTmuTeWzG0nBERD7NjXbgrg.jpg?auto=webp&s=fb6ad8106c0f8537f3d8943ae36bf5cb93760a57');
-    background-size: 100%; 
+    // background-image: url('https://external-preview.redd.it/e_W5f9IwQFdWYwnyboZRwTmuTeWzG0nBERD7NjXbgrg.jpg?auto=webp&s=fb6ad8106c0f8537f3d8943ae36bf5cb93760a57');
+    // background-size: 100%; 
+    background-color: #363636;
 }
 
 a {
@@ -31,7 +32,7 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
 
-    &__image{
+    &__background{
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -57,6 +58,52 @@ a {
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin-inline: 60px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        height: 350px;
+        width: 100%;
+        margin: 50px 0 0 0;
+        background-image: url('https://www.seekpng.com/png/full/8-86419_something-i-made-and-posted-about-5-months.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        &__info{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            color: White;
+        }
+    }
+
+    &__div-botao{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    &__botao{
+        text-decoration: none;
+        background-color: LightSeaGreen;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 10px;
+        color: White;
+        font-size: 1em;
+
+        &:hover {
+            cursor: pointer;
+            background-color: SeaGreen;
+        }
     }
 }
 
@@ -93,7 +140,7 @@ a {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         &__info{
@@ -122,7 +169,7 @@ a {
         justify-content: center;
         border-bottom: 1px solid Black;
         width: 100%;
-        margin: 20px;
+        margin: 0 auto 20px auto; 
     }
 
     &__body {
@@ -150,7 +197,7 @@ a {
         justify-content: center;
         width: 97%;
         padding: 20px;
-        margin-top: 20px;
+        margin: 20px auto 0 auto; 
         border-top: 1px solid Black;
 
         &__link {
@@ -164,6 +211,66 @@ a {
             &:hover {
                 background-color: SeaGreen;
             }
+        }
+    }
+}
+
+/*Mídia Query*/
+@media only screen and (max-width: 700px) {
+    .body {
+
+        &__background{
+            margin-top: -40px;
+        }
+
+        &__image{
+            width: 100%;
+        }
+
+        &__card-list{
+            margin-inline: 30px;
+        }
+
+        &__footer{
+            height: 140px;
+
+            &__info{
+                font-size: 10px;
+                background-color: Black;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .card {
+        &__image{
+            height: 100px;
+        }
+
+        &__status{
+            font-size: 12px;
+
+            &__name{
+                font-size: 10px;
+            }
+        }
+    }
+
+    .info {
+
+        &__body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__img{
+                height: 250px;
+            }
+        }
+
+        &__block__status{
+            margin: 20px 0 0 0 ;
         }
     }
 }
