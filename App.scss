@@ -1,0 +1,300 @@
+/*Corpo HTML*/
+html {
+    // background-image: url('https://external-preview.redd.it/e_W5f9IwQFdWYwnyboZRwTmuTeWzG0nBERD7NjXbgrg.jpg?auto=webp&s=fb6ad8106c0f8537f3d8943ae36bf5cb93760a57');
+    // background-size: 100%; 
+    background-color: #363636;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Bloco SearchBox*/
+.search-box {
+    display: flex;
+    align-items: center;
+    margin: 5px auto 5px auto;
+
+    &__input {
+        margin: 0 auto;
+        padding: 0.5em;
+        font-size: 1.2em;
+        width: 60%;
+        height: 5px;
+        border-radius: 5px;
+    }
+}
+
+/*Página Inicial e Componente Card-List*/
+.body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    &__header{
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        color: black;
+
+        &__logo:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__background{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+    }
+
+    &__personagem{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+    }
+
+    &__search-box{
+        background-color: DimGrey;
+        border: 1px solid Black;
+        padding: 0 0 10px 0;
+        width: 29.3%;
+        margin: 0 70px 0 ;
+
+        &__buscar-por{
+            padding: 10px;
+        }
+    }
+
+    &__card-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-inline: 60px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        height: 350px;
+        width: 100%;
+        margin: 50px 0 0 0;
+        background-image: url('https://www.seekpng.com/png/full/8-86419_something-i-made-and-posted-about-5-months.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        &__info{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            color: White;
+        }
+    }
+
+    &__div-botao{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    &__botao{
+        text-decoration: none;
+        background-color: LightSeaGreen;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 10px;
+        color: White;
+        font-size: 1em;
+
+        &:hover {
+            cursor: pointer;
+            background-color: SeaGreen;
+        }
+    }
+}
+
+/*Componentes Card*/
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: DimGrey;
+    border: 1px solid Black;
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: 0.5s;
+
+    &__image{
+        border: 1px solid Black;
+        border-radius: 100%;
+        margin: 10px;
+        height: 200px;
+    }
+
+    &__status{
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        width: 150px;
+        padding: 0 10px;
+        color: White;
+
+        &__name{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            font-size: 11px;
+        }
+
+        &__info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform:scale(1.03)
+    }
+}
+
+/*Componente Info*/
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid Black;
+        width: 100%;
+        margin: 0 auto 20px auto; 
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        &__img {
+            border-radius: 100%;
+            border: 1px solid Black;
+        }
+    }
+
+    &__block__status {
+        border: 1px solid Black;
+        width: 200px;
+        height: 300px;
+        padding: 20px;
+        margin-left: 200px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+        width: 97%;
+        padding: 20px;
+        margin: 20px auto 0 auto; 
+        border-top: 1px solid Black;
+
+        &__link {
+            text-decoration: none;
+            background-color: LightSeaGreen;
+            padding: 10px 30px;
+            border-radius: 10px;
+            color: White;
+            font-size: 1em;
+
+            &:hover {
+                background-color: SeaGreen;
+            }
+        }
+    }
+}
+
+/*Mídia Query*/
+@media only screen and (max-width: 700px) {
+    .body {
+
+        &__header{
+
+            &__logo{
+                width: 25px;
+            }
+        }
+
+        &__image{
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+
+        &__card-list{
+            margin-inline: 30px;
+        }
+
+        &__footer{
+            height: 140px;
+
+            &__info{
+                font-size: 10px;
+                background-color: Black;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .card {
+        &__image{
+            height: 100px;
+        }
+
+        &__status{
+            font-size: 12px;
+
+            &__name{
+                font-size: 10px;
+            }
+        }
+    }
+
+    .info {
+
+        &__body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__img{
+                height: 250px;
+            }
+        }
+
+        &__block__status{
+            margin: 20px 0 0 0 ;
+        }
+    }
+}
