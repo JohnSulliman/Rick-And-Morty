@@ -8,15 +8,18 @@ import Rick_and_Morty from '../img/Rick_and_Morty.png'
 class CardList extends React.Component {
     constructor(props) {
         super(props);
+        this.currentPage = 1;
+        this.currentName = '';
+        this.currentStatus = '';
+        this.currentSpecies = '';
         this.state = {
             isLoaded: false,
-            pagina: 1,
             chars: [],
         };
     }
 
-    API() {
-        fetch(`https://rickandmortyapi.com/api/character/?page=&name=`)
+    API(page, name, status, species) {
+        fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&species=${species}`)
         .then(resultado => resultado.json())
         .then(resultadoJson =>{
             this.setState({
@@ -26,31 +29,36 @@ class CardList extends React.Component {
         });
     }
 
-    BuscarNome(evento) {
-        if (evento.key === 'Enter'){
-            const nome = evento.target.value
-
-            fetch(`https://rickandmortyapi.com/api/character/?page=&name=${nome}`)
-            .then(resultado => resultado.json())
-            .then(resultadoJson =>{
-                this.setState({
-                isLoaded: true,
-                chars: resultadoJson.results
-                })
-            });
+    Search(evento) {
+        if(evento.key === 'Enter' && evento.target.placeholder === 'Nome'){
+            this.currentName = evento.target.value
+            this.currentPage = 1
         }
+        else if (evento.key === 'Enter' && evento.target.placeholder === 'Status'){
+            this.currentStatus = evento.target.value
+            this.currentPage = 1
+        }
+        else if (evento.key === 'Enter' && evento.target.placeholder === 'Espécie') {
+            this.currentSpecies = evento.target.value
+            this.currentPage = 1
+        }
+
+
+        this.API(this.currentPage, this.currentName, this.currentStatus, this.currentSpecies)
     }
 
     LoadChars() {
-        const nextPage = this.state.pagina + 1;
+        const nextPage = this.currentPage + 1;
+        const name = this.currentName
+        const status = this.currentStatus
+        const species = this.currentSpecies
 
-        fetch(`https://rickandmortyapi.com/api/character/?page=${nextPage}&nome=`)
+        fetch(`https://rickandmortyapi.com/api/character/?page=${nextPage}&name=${name}&status=${status}&species=${species}`)
         .then(resultado => resultado.json())
         .then(resultadoJson =>{
             if(this.state.chars){
+                this.currentPage = nextPage
                 this.setState({
-                    isLoaded: true,
-                    pagina: nextPage,
                     chars: this.state.chars.concat(resultadoJson.results),
                 })
             }
@@ -97,7 +105,12 @@ class CardList extends React.Component {
                         <menu className='body__personagem'>
                             <span><strong>Personagens</strong></span>
                         </menu>
-                        <SearchBox placeholder='Buscar Personagens...' Buscar={(evento) => this.BuscarNome(evento)}/>
+                        <div className='body__search-box'>
+                            <span className='body__search-box__buscar-por'><strong>Buscar por:</strong></span>
+                            <SearchBox placeholder='Nome' search={(evento) => this.Search(evento)}/>
+                            <SearchBox placeholder='Status' search={(evento) => this.Search(evento)}/>
+                            <SearchBox placeholder='Espécie' search={(evento) => this.Search(evento)}/>
+                        </div>
                         <div className='body__card-list'>
                             {this.createCardsChar()}
                         </div>
@@ -114,7 +127,7 @@ class CardList extends React.Component {
     }
 
     componentDidMount() {
-        this.API()
+        this.API(this.currentPage, this.currentName, this.currentStatus, this.currentSpecies)
     }       
 }
 

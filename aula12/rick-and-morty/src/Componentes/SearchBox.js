@@ -7,7 +7,8 @@ class SearchBox extends React.Component {
                 <input type='text' 
                 className='search-box__input'
                 placeholder={this.props.placeholder}
-                onKeyPress={this.props.Buscar} />
+                onKeyPress={this.props.search} 
+                />
             </div>
         );
     }
