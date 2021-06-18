@@ -30,15 +30,15 @@ class CardList extends React.Component {
     }
 
     Search(evento) {
-        if(evento.key === 'Enter' && evento.target.placeholder === 'Nome'){
+        if(evento.key === 'Enter' && evento.target.placeholder === 'Nome(Pressione Enter)'){
             this.currentName = evento.target.value
             this.currentPage = 1
         }
-        else if (evento.key === 'Enter' && evento.target.placeholder === 'Status'){
+        else if (evento.key === 'Enter' && evento.target.placeholder === 'Status(Pressione Enter)'){
             this.currentStatus = evento.target.value
             this.currentPage = 1
         }
-        else if (evento.key === 'Enter' && evento.target.placeholder === 'Espécie') {
+        else if (evento.key === 'Enter' && evento.target.placeholder === 'Espécie(Pressione Enter)') {
             this.currentSpecies = evento.target.value
             this.currentPage = 1
         }
@@ -107,9 +107,9 @@ class CardList extends React.Component {
                         </menu>
                         <div className='body__search-box'>
                             <span className='body__search-box__buscar-por'><strong>Buscar por:</strong></span>
-                            <SearchBox placeholder='Nome' search={(evento) => this.Search(evento)}/>
-                            <SearchBox placeholder='Status' search={(evento) => this.Search(evento)}/>
-                            <SearchBox placeholder='Espécie' search={(evento) => this.Search(evento)}/>
+                            <SearchBox placeholder='Nome(Pressione Enter)' search={(evento) => this.Search(evento)}/>
+                            <SearchBox placeholder='Status(Pressione Enter)' search={(evento) => this.Search(evento)}/>
+                            <SearchBox placeholder='Espécie(Pressione Enter)' search={(evento) => this.Search(evento)}/>
                         </div>
                         <div className='body__card-list'>
                             {this.createCardsChar()}
